@@ -14,17 +14,22 @@ let pokemonList = [
     }
 ];
 
+//array of pokemon with names, heights types
+
  
-for (let i=0; i < pokemonList.height; i++){
-    if (pokemonList[i].height <7 && pokemonList[i].height >2){
-        document.write(pokemonList[i].name + " is a medium sized pokemon");
+for (let i=0; i < pokemonList.length; i++){
+    if (pokemonList[i].height < 7 && pokemonList[i].height > 2){
+        document.write("<li>" + pokemonList[i].name + " is a medium sized pokemon" + "</li>");
     }else if (pokemonList[i].height < 4){
-        document.write(pokemonList.name + " is a small pokemon");
+        document.write("<li>" + pokemonList[i].name + " is a small pokemon") + "</li>";
     }else if (pokemonList[i].height > 4){
-        document.write(pokemonList[i].name + " is a really big pokemon!")
+        document.write("<li>" + pokemonList[i].name + " is a really big pokemon!" + "</li>")
     }
 }
 
+
+
+// for loop that iterates over items in pokemonList
 
 
 
