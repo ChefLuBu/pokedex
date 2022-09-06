@@ -1,1 +1,19 @@
-styles.css
+:root{
+  --background: aquamarine;
+  --secondary-background: lightgrey;
+  --default-font-size: 60px;
+  --small-font-size: 16px;
+  --font-weight: 700;
+  --h-padding: 20px 0
+}
+
+body{
+    background-color: var(--background);
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--secondary-background);
+    height: 140px;    
+}
