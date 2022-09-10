@@ -1,9 +1,3 @@
-// create a new variable pokemonRepository and assign the IIFE to it
-// The IIFE should return an object with the following public functions assigned as keys: 
-// getAll: return all items (pokemonRepository.getAll(); should return the pokemonList array)
-// add: add a single item to the pokemonList array (calling pokemonRepository.add(item); 
-// should add the Pokémon referred to with item to the pokemonList array)   
-
 let pokemonRepository = (function () {
     let pokemonList = [
         {
@@ -22,9 +16,7 @@ let pokemonRepository = (function () {
             type: ['Water']
         }
     ]
-
-    //getAll and add are semantic and its just good practice to use descriptors that make sense
-
+    
     function getAll() {
         return pokemonList;
     }
@@ -42,43 +34,47 @@ let pokemonRepository = (function () {
         }
     }
 
+    function addListItem(pokemon) {
+        let container = document.querySelector('.pokemon-list');
+        let listItem = document.createElement('li');
+        let button = document.createElement('button')
+    //to enable loop to return each name of the pokemon characters do not put the pokemon.name in quotation marks
+        button.innerText = pokemon.name;
+        button.classList.add('button');
+        listItem.appendChild(button);
+        container.appendChild(listItem);
+        button.addEventListener('click', function(event){ //step 2-1 add event listener for each button 
+            showDetails(pokemon); //step 2-2 add showDetails pokemon
+        });
+    };
+
+    function showDetails(pokemon) {
+        loadDetails(pokemon).then(function(event){
+            console.log(pokemon);
+        });
+    }
+
 
     return {
         getAll: getAll,
         add: add,
-        getPokemonByName: getPokemonByName
+        getPokemonByName: getPokemonByName,
+        addListItem : addListItem,
+        showDetails : showDetails
     };
 
 })();
 
-console.log(pokemonRepository.getAll());
-pokemonRepository.add({ name: 'Totodile', height: 4, type: ['Water'] });
-//add function adds Totodile to the array along with parameters specified
+// console.log(pokemonRepository.getAll());
+// pokemonRepository.add({ name: 'Totodile', height: 4, type: ['Water'] });
 
-
-//array of pokemon with names, heights types
-//functions call actions without repasting code over and over again
-//Parameters go inside of functions parentheses when declared
-//Arguments go inside of functions parentheses when called
 
 let pokemonList = pokemonRepository.getAll();
-
 pokemonList.forEach(function (pokemon) {
-    console.log(pokemon.name + ' height: ' + pokemon.height + '' + pokemon.type);
-    document.write('<p>' + pokemon.name + ' height: ' + pokemon.height + ' ' + 'Type:' + ' ' + pokemon.type + '</p>');
+    pokemonRepository.addListItem(pokemon)
 });
 
-document.write('<p> Filtered Pokemon List by Name: Squirtle </p>');
-let foundPokemon = pokemonRepository.getPokemonByName('squirtle')[0];
-document.write('<p>' + foundPokemon.name + ' height: ' + foundPokemon.height + ' ' + 'Type:' + ' ' + foundPokemon.type + '</p>');
-// for (let i = 0; i < pokemonList.length; i++ ) { to loop through each pokemon character
-//   if  (pokemonList[i].height > 1.5) {
-//     document.write('<p>' + pokemonList[i].name + ' height: '  + pokemonList[i].height + ' -Wow, that\'s big!' + '</p>');
-//   } else {
-//       document.write('<p>' + pokemonList[i].name + ' height: '  + pokemonList[i].height + '</p>');  the <br> tag added a line break while the <p> tag also adds a line break and puts each pokemon in a different paragraph
-//   }
-// }
-
-
-// For loop that specifies pokemon size based on parameters
+// document.write('<p> Filtered Pokemon List by Name: Squirtle </p>');
+// let foundPokemon = pokemonRepository.getPokemonByName('squirtle')[0];
+// document.write('<p>' + foundPokemon.name + ' height: ' + foundPokemon.height + ' ' + 'Type:' + ' ' + foundPokemon.type + '</p>');
 
