@@ -49,9 +49,7 @@ let pokemonRepository = (function () {
     };
 //console log each button press with pokemon details in console
             function showDetails(pokemon) {
-                showDetails(pokemon).then(function(event){
-                    click(console.log(pokemon));
-                });
+                console.log(pokemon);
      }
 //not currently functioning as intended
 
