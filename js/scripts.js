@@ -47,13 +47,13 @@ let pokemonRepository = (function () {
             showDetails(pokemon); //step 2-2 add showDetails pokemon
         });
     };
-
-    function showDetails(pokemon) {
-        loadDetails(pokemon).then(function(event){
-            console.log(pokemon);
-        });
-    }
-
+//console log each button press with pokemon details in console
+            function showDetails(pokemon) {
+                showDetails(pokemon).then(function(event){
+                    click(console.log(pokemon));
+                });
+     }
+//not currently functioning as intended
 
     return {
         getAll: getAll,
