@@ -1,6 +1,6 @@
 :root{
-  --background: aquamarine;
-  --secondary-background: lightgrey;
+  --background: #ce2211;
+  --secondary-background: #e54222;
   --default-font-size: 60px;
   --small-font-size: 16px;
   --font-weight: 700;
@@ -27,7 +27,7 @@ header {
 
 .button{
     background-color:rgb(83, 83, 83); 
-    border: white;
+    border: #e54222;
     border-width: 20px;
     outline: auto;
     border-radius: 5%;
@@ -79,7 +79,7 @@ button:hover, button:focus {
     margin: auto;
     display: inline-block;
     box-sizing: border-box;
-    background: #fff;
+    background: #5EBDFC;
     padding: 15px;
     width: 100%;
     max-width: 700px;
@@ -91,7 +91,7 @@ button:hover, button:focus {
     -webkit-appearance: none;
     border: 0;
     background: none;
-    color: #777;
+    color: #effcd5;
     text-decoration: underline;
   }
   
@@ -103,4 +103,6 @@ button:hover, button:focus {
     margin-bottom: 0;
   }
 
-  
+.main-title {
+  font-size: 100px;
+}
