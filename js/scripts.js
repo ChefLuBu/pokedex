@@ -155,7 +155,7 @@ let pokemonRepository = (function () {
          if (e.key === 'Escape' &&
          modalContainer.classList.contains('is-visible')) {
              hideModal();
-         }
+         };
      });
 
 
@@ -163,7 +163,7 @@ let pokemonRepository = (function () {
          let target = e.target;
          if (target === modalContainer) {
         hideModal();
-         }
+         };
      });
 
     // document.querySelector('#show-modal').addEventListener('click', () => {
