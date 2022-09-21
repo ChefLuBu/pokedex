@@ -2,7 +2,7 @@ let pokemonRepository = (function () {
     let pokemonList = [];
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=950';
 
-    
+
     function add(pokemon) {
         if (
             typeof pokemon === "object" &&
@@ -76,23 +76,35 @@ let pokemonRepository = (function () {
         let modalBody = $('.modal-body');
         let modalTitle = $('.modal-title');
         let modalHeader = $('.modal-header');
-      
+
         modalTitle.empty();
         modalBody.empty();
         modalHeader.empty();
-      
+
         let nameElement = $('<h1>' + pokemon.name + '</h1>');
         let imageElement = $('<img class="modal-img">');
         imageElement.attr('src', pokemon.imageUrl);
         let heightElement = $('<p>' + 'Height: ' + pokemon.height + '</p>');
-        let typesElement = $('<p>' + 'Types: ' + pokemon.types[0].type.name +'</p>');
-      
+        let typesElement = $('<p>' + 'Types: ' + getTypeString(pokemon.types) + '</p>');
+
         modalTitle.append(nameElement);
         modalBody.append(imageElement);
         modalBody.append(heightElement);
         modalBody.append(typesElement);
         modalHeader.append(nameElement);
-      }
+    }
+
+    function getTypeString(types) {
+        let typeString = '';
+        types.forEach((type, index) => {
+            if (index === 0) {
+                typeString += type.type.name;
+            } else {
+                typeString += `/${type.type.name}`
+            }
+        });
+        return typeString;
+    }
 
 
     return {
@@ -101,7 +113,7 @@ let pokemonRepository = (function () {
         addListItem: addListItem,
         showDetails: showDetails,
         loadList: loadList,
-        loadDetails: loadDetails,
+        loadDetails: loadDetails
     };
 
 })();
