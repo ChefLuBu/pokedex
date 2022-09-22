@@ -41,12 +41,10 @@ header {
     text-decoration: none;
 }
 
-button:hover, button:focus {
-    /*lets the mouse appear as a hand when hovering over the button */
+ button:hover  {
     cursor: pointer;
     color: var(--secondary-color);
-    opacity: 0.7;
-    /*reduces the opacity of the button to 80& */
+    opacity: 0.6;
   }
 
   #modal-container {
@@ -106,4 +104,5 @@ button:hover, button:focus {
   font-size: 100px;
   
 }
+
 
