@@ -1,4 +1,3 @@
-Project description
-How to get the project running
-Project dependencies (e.g., JavaScript version, ESLint rules)
-Which API the project uses
+Using JavaScript, jQuery, and Bootstreap
+Create and implement an api-based Pokedex app 
+with specified functions
