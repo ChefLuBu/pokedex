@@ -81,7 +81,7 @@ let pokemonRepository = (function () {
         modalBody.empty();
         modalHeader.empty();
 
-        let nameElement = $('<h1>' + pokemon.name + '</h1>');
+        let nameElement = $(`<h1>  ${pokemon.name} </h1>`);
         let imageElement = $('<img class="modal-img">');
         imageElement.attr('src', pokemon.imageUrl);
         let heightElement = $('<p>' + 'Height: ' + pokemon.height + '</p>');
@@ -107,14 +107,7 @@ let pokemonRepository = (function () {
     }
 
 
-    return {
-        getAll: getAll,
-        add: add,
-        addListItem: addListItem,
-        showDetails: showDetails,
-        loadList: loadList,
-        loadDetails: loadDetails
-    };
+    return { getAll, add, addListItem, showDetails, loadList, loadDetails};
 
 })();
 
