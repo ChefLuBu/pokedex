@@ -5,21 +5,21 @@ let pokemonRepository = (function () {
 
     function add(pokemon) {
         if (
-            typeof pokemon === "object" &&
-            "name" in pokemon
+            typeof pokemon === 'object' &&
+            'name' in pokemon
             &&
-            "detailsUrl" in pokemon
+            'detailsUrl' in pokemon
         ) {
             pokemonList.push(pokemon);
         } else {
-            console.log("pokemon is not correct");
+            console.log('pokemon is not correct');
         }
     }
 
 
     function getAll() {
         return pokemonList;
-    };
+    }
 
     function addListItem(pokemon) {
         let pokemonList = document.querySelector('.pokemon-list');
@@ -31,11 +31,11 @@ let pokemonRepository = (function () {
         button.setAttribute('data-target', '#modal-container');
         listItem.appendChild(button);
         pokemonList.appendChild(listItem);
-        button.addEventListener('click', function (event) {
+        button.addEventListener('click', function () {
             showDetails(pokemon);
         });
 
-    };
+    }
 
     function loadList() {
         return fetch(apiUrl).then(function (response) {
@@ -51,7 +51,7 @@ let pokemonRepository = (function () {
         }).catch(function (e) {
             console.error(e);
         });
-    };
+    }
 
     function loadDetails(item) {
         let url = item.detailsUrl;
@@ -64,13 +64,13 @@ let pokemonRepository = (function () {
         }).catch(function (e) {
             console.error(e);
         });
-    };
+    }
 
     function showDetails(pokemon) {
         pokemonRepository.loadDetails(pokemon).then(function () {
             showModal(pokemon);
         });
-    };
+    }
 
     function showModal(pokemon) {
         let modalBody = $('.modal-body');
