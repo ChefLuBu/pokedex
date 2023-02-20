@@ -8,7 +8,9 @@ Types
 
 ## Technologies Used
 HTML
+
 Javascript
+
 CSS
 
 ## Notes
