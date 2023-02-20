@@ -11,6 +11,8 @@ HTML
 
 Javascript
 
+AJAX
+
 CSS
 
 ## Notes
